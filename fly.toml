@@ -1,0 +1,26 @@
+app = "suichat"
+
+[[services]]
+  internal_port = 3000
+  protocol = "tcp"
+
+[[services.ports]]
+  handlers = ["http"]
+  port = "80"
+
+[[deploy.targets]]
+  name = "frontend"
+  type = "npm"
+  command = "npm run build"  # Change this to run the production build
+  release_command = "npm start"  # Command to run after deployment
+
+[[deploy.targets]]
+  name = "backend"
+  type = "npm"
+  command = "npm start"
+  release_command = "npm start"  # Command to run after deployment
+
+[env]
+  # Add your environment variables here, including API keys, project IDs, etc.
+  CHAT_ENGINE_PROJECT_ID = "b631f88f-be35-400c-9a51-3285640a6580"
+  CHAT_ENGINE_PRIVATE_KEY = "5bd4e27a-1f29-48f3-9044-075e99ca13b9"

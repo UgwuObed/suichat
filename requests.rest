@@ -1,0 +1,20 @@
+POST http://localhost:3001/login
+Content-Type: application/json
+
+{
+  "username": "victor",
+  "secret": "pass1234"
+}
+
+###
+
+POST http://localhost:3001/signup
+Content-Type: application/json
+
+{
+  "username": "victor",
+  "secret": "pass1234",
+  "email": "victor@wano.app",
+  "first_name": "Victor",
+  "last_name": "Obed"
+}
